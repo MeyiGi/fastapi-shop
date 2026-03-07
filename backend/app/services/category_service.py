@@ -8,7 +8,7 @@ class CategoryService:
     def __init__(self, db: Session):
         self.repositoy = CategoryRepository(db)
 
-    def get_all_repositories(self) -> List[CategoryResponse]:
+    def get_all_categories(self) -> List[CategoryResponse]:
         categories = self.repositoy.get_all()
         return [CategoryResponse.model_validate(cat) for cat in categories]
     
@@ -21,6 +21,6 @@ class CategoryService:
             )
         return CategoryResponse.model_validate(category)
     
-    def create_cateogyr(self, category_data: CategoryCreate) -> CategoryResponse:
+    def create_cateogy(self, category_data: CategoryCreate) -> CategoryResponse:
         category = self.repositoy.create(category_data)
         return CategoryResponse.model_validate(category)
