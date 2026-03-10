@@ -1,7 +1,5 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
-from typing import List
-from app.routes.categories import get_categories
 from ..database import get_db
 from ..services.product_service import ProductService
 from ..schemas.product import ProductResponse, ProductListResponse
